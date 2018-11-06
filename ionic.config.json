@@ -1,0 +1,8 @@
+{
+  "name": "slashapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "pro_id": "d75c57bc"
+}

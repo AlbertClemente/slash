@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-searchbar #artistTerm (ionInput)="getItems(artistTerm.value)" placeholder="Buscar canciones..." debounce="5000"></ion-searchbar>
+      <ion-item>
+        <ion-icon name="heart" icon-only></ion-icon>
+        <ion-badge color="accent">{{totalLikes}}</ion-badge>
+      </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="outer-content">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 *ngFor="let song of songs">
+          <ion-card>
+            <img [src]="song.artworkUrl100"/>
+            <ion-card-content>
+              <ion-card-title>
+                {{song.trackName}}
+                </ion-card-title>
+              <p>
+                {{song.artistName}}
+              </p>
+              <button ion-button icon-only large color="primary">
+                <ion-icon name="heart" isActive="false"></ion-icon>
+              </button>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
